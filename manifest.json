@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "This is Trash",
+  "description": "The Interwebz so full of TRASH. Take it out!!!",
+  "version": "0.5",
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "SAM AN THA"
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "contextMenus",
+    "tabs"
+  ],
+  "background": {
+      "scripts": [
+          "background.js"
+      ]
+  },
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js" : ["content.js"]
+  }]
+}
